@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+nav {
+  background: rgb(3, 3, 3);
+  padding: 5px 40px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex; /*bbbbbbbbbbb*/
+  flex-wrap: wrap; /*bbbbbbbbbbb*/
+}
+
+nav ul li {
+  padding: 15px 0;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+}
+
+nav ul li.items {
+  position: relative; /* ino bekhter after tu in oain neveshtam */
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3; /************/
+}
+/*  inja mikham ye khat zire har yek az menuham bekesham */
+nav ul li.items::after {
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: darkturquoise;
+  opacity: 0; /* inja opacity ro 0 midam ta dide nashe vali pain tu hove 1 midam vagti hover mishe dide mishe */
+  transition: all 0.2s linear;
+}
+
+nav ul li.items:hover:after {
+  opacity: 1;
+  bottom: 10px;
+}
+
+nav ul li.logo {
+  flex: 1; /*bbbbbbbbbbb*/
+  color: white;
+  font-size: 23px;
+  font-weight: 600;
+  cursor: default; /*bbbbbbbbbbb*/
+  user-select: none; /*bbbbbbbbbbb*/
+}
+nav ul li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+nav ul li:hover a {
+  color: cyan;
+}
+
+nav ul li i {
+  font-size: 23px;
+}
+
+nav ul li.btn {
+  display: none;
+}
+
+@media all and (max-width: 900px) {
+  /*bbbbbbbbbbb*/
+  nav {
+    padding: 5px 30px;
+  }
+  nav ul li.btn {
+    /* inja vagti safharo bozorg mikonam hamberger bar dg dide nemishe */
+    display: block;
+  }
+
+  nav ul li.items {
+    width: 100%;
+  }
+}
